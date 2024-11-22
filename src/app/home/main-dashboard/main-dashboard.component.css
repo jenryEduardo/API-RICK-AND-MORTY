@@ -1,0 +1,103 @@
+.container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  position: relative;
+  top: 300px;
+}
+
+.tittle{
+  color: #4caf50;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  position: absolute;
+  top:80px;
+  left: 400px;
+  font-size: 100px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.table thead {
+  background: #4caf50; /* Verde moderno */
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.table thead th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 16px;
+
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #f2f2f2; /* Rayas */
+}
+
+.table tbody tr:hover {
+  background: #e8f5e9; /* Resaltar al pasar el mouse */
+}
+
+.table tbody td {
+  padding: 12px 16px;
+  color: #333;
+  font-size: 14px;
+}
+
+.table tbody td:first-child {
+  font-weight: bold;
+}
+
+.table tbody td:last-child {
+  color: #555;
+}
+
+
+.table tbody td button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  height: 30px;
+  position: relative;
+  left: 5px;
+}
+
+@media (max-width: 600px) {
+  .table thead {
+    display: none; /* Ocultar encabezado en pantallas pequeñas */
+  }
+
+  .table tbody tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #4caf50;
+  }
+}
