@@ -1,0 +1,24 @@
+
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Location</th>
+        <th>ver personajes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of data">
+        <td>{{location.name}}</td>
+        <td>{{location.type}}</td>
+        <td>{{location.dimension}}</td>
+        <td><button type="submit" class="btn">ver personajes</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MainDashboardComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class HomeModule { }
