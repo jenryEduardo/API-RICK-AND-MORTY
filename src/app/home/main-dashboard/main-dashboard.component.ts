@@ -1,31 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RickAndMortyApiService } from '../services/rick-and-morty-api.service';
 import { Model } from '../model/location';
 
 @Component({
   selector: 'app-main-dashboard',
   templateUrl: './main-dashboard.component.html',
-  styleUrls: ['./main-dashboard.component.css'],
+  styleUrl: './main-dashboard.component.css'
 })
-export class MainDashboardComponent implements OnInit {
-  data: Model[] = [];
+export class MainDashboardComponent {
 
-  constructor(private service: RickAndMortyApiService) {}
+constructor(private service : RickAndMortyApiService){}
 
-  ngOnInit(): void {
-    this.fetchLocations();
-  }
+data : Model[] = []
 
-  // Llama al servicio para obtener todas las locaciones
-  fetchLocations() {
-    this.service.getAllLocations().subscribe({
-      next: (locations) => {
-        this.data = locations;
-        console.log('Todas las locaciones obtenidas:', this.data);
+id: number = 1
+
+ngOnInit(): void {
+  this.onSubmit()
+}
+
+onSubmit(){
+    this.service.getLocation().subscribe({
+      next: (response) => {
+        this.data.push(response);
+        console.log('Datos obtenidos: ', this.data);
       },
       error: (error) => {
-        console.error('Error al obtener las locaciones:', error);
-      },
+        console.error('Error al obtener la ubicación: ', error);
+      }
     });
-  }
+}
+
 }
